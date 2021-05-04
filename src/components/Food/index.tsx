@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
@@ -19,7 +19,7 @@ interface Edits {
   handleEditFood: (food: FoodProps) => void;
 }
 
-export const Food = ({ food, handleDelete, handleEditFood }: Edits) => {
+const Food = ({ food, handleDelete, handleEditFood }: Edits) => {
   const [isAvailable, setIsAvailable] = useState(true);
 
   const toggleAvailable = async () => {
@@ -87,6 +87,8 @@ export const Food = ({ food, handleDelete, handleEditFood }: Edits) => {
     </>
   );
 }
+
+export default Food;
 /*class Food extends Component {
   constructor(props) {
     super(props);
