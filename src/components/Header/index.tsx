@@ -1,10 +1,39 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { FiPlusSquare } from 'react-icons/fi';
 
 import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 
-class Header extends Component {
+const Header = () => {
+  const [isopen, setIsopen ] = useState(false)
+
+  const handleClick = () => {
+    setIsopen(true);
+  }
+
+  return(
+    <Container>
+      <header>
+        <img src={Logo} alt="GoRestaurant" />
+        <nav>
+          <div>
+            <button
+              type="button"
+              onClick={handleClick}
+            >
+              <div className="text">Novo Prato</div>
+              <div className="icon">
+                <FiPlusSquare size={24} />
+              </div>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </Container>
+  );
+}
+
+/*class Header extends Component {
   render() {
     const { openModal } = this.props;
 
@@ -30,5 +59,5 @@ class Header extends Component {
     )
   }
 };
-
+*/
 export default Header;
