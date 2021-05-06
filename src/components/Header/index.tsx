@@ -4,7 +4,11 @@ import { FiPlusSquare } from 'react-icons/fi';
 import { Container } from './styles';
 import Logo from '../../assets/logo.svg';
 
-const Header = () => {
+interface modalProps {
+  openModal: () => void;
+}
+
+const Header = ({ openModal }: modalProps) => {
   const [isopen, setIsopen ] = useState(false)
 
   const handleClick = () => {
